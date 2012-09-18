@@ -1,0 +1,24 @@
+{
+  "author": "Makara Wang <makara@wiredcraft.com> (https://github.com/makara)",
+  "name": "bones-test",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": [
+    "bones",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/makara/bones-test.git"
+  },
+  "dependencies": {
+    "optimist": "0.3.x"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "should": "1.x"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./test/*.mocha.js"
+  }
+}
