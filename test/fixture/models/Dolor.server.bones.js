@@ -1,12 +1,19 @@
 var store = {};
 
-// Demonstrate a model that requires an ID.
-models['Lorem'].prototype.sync = function(method, model, options) {
+// Demonstrate a model that builds the ID from its name.
+models['Dolor'].prototype.sync = function(method, model, options) {
     options || (options = {});
     var success = options.success, error = options.error;
 
-    var id = model.get('id') || null;
-    if (!id) return error('ID is required');
+    var name = model.get('name') || null;
+    if (!name) return error('Name is required');
+
+    var id = name.toLowerCase().replace(/ +/g, '_').replace(/[^_\w]/g, '');
+    model.set({
+        id: name
+    }, {
+        silent: true
+    });
 
     if (method === 'read') {
         return store[id] ? success(store[id]) : error('Model not found.');
