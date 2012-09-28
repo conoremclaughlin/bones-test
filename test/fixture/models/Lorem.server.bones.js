@@ -1,6 +1,5 @@
 var store = {};
 
-// Demonstrate a model that requires an ID.
 models['Lorem'].prototype.sync = function(method, model, options) {
     options || (options = {});
     var success = options.success, error = options.error;

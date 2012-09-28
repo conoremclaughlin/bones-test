@@ -10,4 +10,9 @@ describe('Ipsum, a simple model uses the name as the ID', function() {
     }, {
         another: 'Dolor'
     });
+    bonesTest.testModelCRUDHTTP(server, 'Ipsum', {
+        name: 'Ipsum'
+    }, {
+        another: 'Dolor'
+    });
 });

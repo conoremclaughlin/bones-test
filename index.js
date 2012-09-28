@@ -10,3 +10,6 @@ bonesTest.testModel = require('./lib/model');
 
 // Test model CRUD.
 bonesTest.testModelCRUD = require('./lib/model-crud');
+
+// Test model CRUD with HTTP requests.
+bonesTest.testModelCRUDHTTP = require('./lib/model-crud-http');

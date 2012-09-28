@@ -10,4 +10,9 @@ describe('Dolor, a simple model builds the ID from its name', function() {
     }, {
         another: 'Sit'
     });
+    bonesTest.testModelCRUDHTTP(server, 'Dolor', {
+        name: 'Dolor'
+    }, {
+        another: 'Sit'
+    });
 });

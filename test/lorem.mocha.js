@@ -11,4 +11,10 @@ describe('Lorem, a simple model', function() {
     }, {
         another: 'Ipsum'
     });
+    bonesTest.testModelCRUDHTTP(server, 'Lorem', {
+        id: 'lorem',
+        name: 'Lorem'
+    }, {
+        another: 'Ipsum'
+    });
 });

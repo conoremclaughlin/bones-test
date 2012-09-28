@@ -1,19 +1,11 @@
 var store = {};
 
-// Demonstrate a model that builds the ID from its name.
 models['Dolor'].prototype.sync = function(method, model, options) {
     options || (options = {});
     var success = options.success, error = options.error;
 
-    var name = model.get('name') || null;
-    if (!name) return error('Name is required');
-
-    var id = name.toLowerCase().replace(/ +/g, '_').replace(/[^_\w]/g, '');
-    model.set({
-        id: name
-    }, {
-        silent: true
-    });
+    var id = this.setID() || null;
+    if (!id) return error('ID or name is required');
 
     if (method === 'read') {
         return store[id] ? success(store[id]) : error('Model not found.');

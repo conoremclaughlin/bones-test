@@ -1,14 +1,11 @@
 var store = {};
 
-// Demonstrate a model that uses the name as the ID.
 models['Ipsum'].prototype.sync = function(method, model, options) {
     options || (options = {});
     var success = options.success, error = options.error;
 
-    var name = model.get('name') || null;
-    if (!name) return error('Name is required');
-
-    var id = name;
+    var id = model.get('name') || null;
+    if (!id) return error('Name is required');
 
     if (method === 'read') {
         return store[id] ? success(store[id]) : error('Model not found.');

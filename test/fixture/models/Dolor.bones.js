@@ -1,10 +1,25 @@
+// Demonstrate a model that builds the ID from its name.
 model = Backbone.Model.extend({
-    isNew: function() {
-        // This is required because we are building IDs inside the model.
-        // Another way could be providing a public method that builds the ID.
-        return false;
+    initialize: function(attributes) {
+        this.setID();
+    },
+    setID: function() {
+        if (!this.id && this.has('name')) {
+            this.set({
+                id: this.buildID(this.get('name'))
+            }, {
+                silent: true
+            });
+        }
+        return this.id;
+    },
+    buildID: function(name) {
+        return name.toLowerCase().replace(/ +/g, '_').replace(/[^_\w]/g, '');
     },
     url: function() {
+        if (_(this.id).isUndefined()) {
+            return '/api/Dolor';
+        }
         return '/api/Dolor/' + encodeURIComponent(this.id);
     }
 });
