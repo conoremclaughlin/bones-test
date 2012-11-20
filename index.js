@@ -13,3 +13,7 @@ bonesTest.testModelCRUD = require('./lib/model-crud');
 
 // Test model CRUD with HTTP requests.
 bonesTest.testModelCRUDHTTP = require('./lib/model-crud-http');
+
+// Dummy models and various utility functions.
+// TODO: expose directly in bonesTest
+bonesTest.utils = require('./lib/utils');

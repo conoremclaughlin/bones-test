@@ -14,7 +14,8 @@
   "dependencies": {
     "optimist": "0.3.x",
     "request": "2.x",
-    "should": "1.x"
+    "should": "1.x",
+    "debug": "0.x"
   },
   "devDependencies": {
     "mocha": "1.x"
